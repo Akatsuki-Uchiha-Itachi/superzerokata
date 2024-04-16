@@ -1,38 +1,41 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.game{
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+.board{
+  display: grid;
+  grid-template-columns: repeat(3,8rem);
+  grid-template-rows: repeat(3,10rem);
+}
+.jankari{
+  margin-top: 4rem;
+  font-size: 1.5rem;
+}
+.grid-item{
+  border: 1px solid black;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.grid-item:nth-child(3n){
+  border-right: none;
+}
+.grid-item:nth-child(1),
+.grid-item:nth-child(4),
+.grid-item:nth-child(7){
+  border-left: none;
+}
+.grid-item:nth-last-child(-n+3){
+  border-bottom: none;
 }
 
-.App-link {
-  color: #61dafb;
+.grid-item:nth-child(-n+3){
+  border-top: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
+
+
